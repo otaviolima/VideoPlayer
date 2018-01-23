@@ -93,5 +93,15 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 
         AsyncImageLoader.shared.cancelDownloading(urlString: model.thumbnailURL)
     }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = dataSource[indexPath.row]
+
+        let vc = PlayerViewController()
+        vc.videoURL = model.videoURL
+
+        present(vc, animated: true, completion: nil)
+        
+    }
 }
 

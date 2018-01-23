@@ -11,6 +11,8 @@
 		7A56F5A32017CF9800948268 /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5A22017CF9800948268 /* ThumbnailModel.swift */; };
 		7A56F5A72017D8C600948268 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5A62017D8C600948268 /* AsyncImageLoader.swift */; };
 		7A56F5AA2017DDD600948268 /* PlaylistDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5A92017DDD600948268 /* PlaylistDataProvider.swift */; };
+		7A56F5AC2017F06300948268 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5AB2017F06300948268 /* PlayerViewController.swift */; };
+		7A56F5AE2017F21700948268 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5AD2017F21700948268 /* PlayerView.swift */; };
 		7AD0F86920178E6100C2D5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0F86820178E6100C2D5A3 /* AppDelegate.swift */; };
 		7AD0F86B20178E6100C2D5A3 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0F86A20178E6100C2D5A3 /* VideoListViewController.swift */; };
 		7AD0F87020178E6100C2D5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0F86F20178E6100C2D5A3 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 		7A56F5A22017CF9800948268 /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
 		7A56F5A62017D8C600948268 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
 		7A56F5A92017DDD600948268 /* PlaylistDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDataProvider.swift; sourceTree = "<group>"; };
+		7A56F5AB2017F06300948268 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		7A56F5AD2017F21700948268 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		7AD0F86520178E6100C2D5A3 /* Video Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD0F86820178E6100C2D5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD0F86A20178E6100C2D5A3 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				7A56F59E2017CEA200948268 /* ThumbnailCell.swift */,
+				7A56F5AD2017F21700948268 /* PlayerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -55,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				7AD0F86A20178E6100C2D5A3 /* VideoListViewController.swift */,
+				7A56F5AB2017F06300948268 /* PlayerViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -191,6 +197,8 @@
 				7A56F5A32017CF9800948268 /* ThumbnailModel.swift in Sources */,
 				7A56F5A72017D8C600948268 /* AsyncImageLoader.swift in Sources */,
 				7A56F59F2017CEA200948268 /* ThumbnailCell.swift in Sources */,
+				7A56F5AC2017F06300948268 /* PlayerViewController.swift in Sources */,
+				7A56F5AE2017F21700948268 /* PlayerView.swift in Sources */,
 				7AD0F86B20178E6100C2D5A3 /* VideoListViewController.swift in Sources */,
 				7A56F5AA2017DDD600948268 /* PlaylistDataProvider.swift in Sources */,
 				7AD0F86920178E6100C2D5A3 /* AppDelegate.swift in Sources */,
