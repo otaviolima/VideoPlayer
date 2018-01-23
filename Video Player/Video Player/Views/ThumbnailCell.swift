@@ -52,14 +52,14 @@ class ThumbnailCell: UITableViewCell {
 
     private func configureUI() {
         title.translatesAutoresizingMaskIntoConstraints = false
-        title.numberOfLines = 0;
+        title.numberOfLines = 0
         title.textColor = .white
 
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.numberOfLines = 0
 
         presenterName.translatesAutoresizingMaskIntoConstraints = false
-        presenterName.numberOfLines = 0;
+        presenterName.numberOfLines = 0
 
         time.translatesAutoresizingMaskIntoConstraints = false
         time.numberOfLines = 0
