@@ -33,6 +33,14 @@ class VideoListViewController: UIViewController {
         view.addSubview(tableView)
     }
 
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
+    }
+
     private func mockData() {
         var models = [ThumbnailModel]()
 
