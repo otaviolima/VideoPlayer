@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  VideoListViewController.swift
 //  Video Player
 //
 //  Created by Otávio Lima on 23/01/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class VideoListViewController: UIViewController {
 
 }
 
