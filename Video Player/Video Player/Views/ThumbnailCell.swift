@@ -9,7 +9,7 @@
 import UIKit
 
 struct Dimensions {
-    static let thumbnailAspectRatio: CGFloat = 210 / 480
+    static let thumbnailAspectRatio: CGFloat = 270 / 480
     static let margin: CGFloat = 8
     static let verticalSpacing: CGFloat = 4
 
@@ -22,11 +22,21 @@ class ThumbnailCell: UITableViewCell {
     private let presenterName = UILabel()
     private let time = UILabel()
     private let descriptionLabel = UILabel()
-    private let thumbImageView = UIView()
+    private let thumbImageView = UIImageView()
 
     var model: ThumbnailModel? {
         didSet {
             configureWith(model: model)
+        }
+    }
+
+    var thumbnailImage: UIImage? {
+        set {
+            thumbImageView.image = newValue
+        }
+
+        get {
+            return thumbImageView.image
         }
     }
 
@@ -43,6 +53,7 @@ class ThumbnailCell: UITableViewCell {
     private func configureUI() {
         title.translatesAutoresizingMaskIntoConstraints = false
         title.numberOfLines = 0;
+        title.textColor = .white
 
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         descriptionLabel.numberOfLines = 0
@@ -53,8 +64,10 @@ class ThumbnailCell: UITableViewCell {
         time.translatesAutoresizingMaskIntoConstraints = false
         time.numberOfLines = 0
         time.textAlignment = .right
+        time.textColor = .white
 
         thumbImageView.translatesAutoresizingMaskIntoConstraints = false
+        thumbImageView.contentMode = .scaleAspectFit
 
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(presenterName)
@@ -106,4 +119,5 @@ class ThumbnailCell: UITableViewCell {
         time.text = model?.time
         descriptionLabel.text = model?.description
     }
+    
 }

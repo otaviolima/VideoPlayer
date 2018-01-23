@@ -15,5 +15,6 @@ struct ThumbnailModel  {
     let time: String
     let description: String
     let videoURL: String
+    let thumbnailURL: String
 
 }

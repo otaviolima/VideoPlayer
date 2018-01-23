@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A56F59F2017CEA200948268 /* ThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F59E2017CEA200948268 /* ThumbnailCell.swift */; };
 		7A56F5A32017CF9800948268 /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5A22017CF9800948268 /* ThumbnailModel.swift */; };
+		7A56F5A72017D8C600948268 /* AsyncImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A56F5A62017D8C600948268 /* AsyncImageLoader.swift */; };
 		7AD0F86920178E6100C2D5A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0F86820178E6100C2D5A3 /* AppDelegate.swift */; };
 		7AD0F86B20178E6100C2D5A3 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD0F86A20178E6100C2D5A3 /* VideoListViewController.swift */; };
 		7AD0F87020178E6100C2D5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0F86F20178E6100C2D5A3 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		7A56F59E2017CEA200948268 /* ThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailCell.swift; sourceTree = "<group>"; };
 		7A56F5A22017CF9800948268 /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
+		7A56F5A62017D8C600948268 /* AsyncImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageLoader.swift; sourceTree = "<group>"; };
 		7AD0F86520178E6100C2D5A3 /* Video Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Video Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AD0F86820178E6100C2D5A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AD0F86A20178E6100C2D5A3 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7A56F5A52017D89600948268 /* AsyncImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				7A56F5A62017D8C600948268 /* AsyncImageLoader.swift */,
+			);
+			path = AsyncImageLoader;
+			sourceTree = "<group>";
+		};
 		7AD0F85C20178E6100C2D5A3 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		7AD0F86720178E6100C2D5A3 /* Video Player */ = {
 			isa = PBXGroup;
 			children = (
+				7A56F5A52017D89600948268 /* AsyncImageLoader */,
 				7A56F5A12017CF8700948268 /* Model */,
 				7A56F5A02017CF6600948268 /* ViewController */,
 				7A56F59D2017CE9200948268 /* Views */,
@@ -163,6 +174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A56F5A32017CF9800948268 /* ThumbnailModel.swift in Sources */,
+				7A56F5A72017D8C600948268 /* AsyncImageLoader.swift in Sources */,
 				7A56F59F2017CEA200948268 /* ThumbnailCell.swift in Sources */,
 				7AD0F86B20178E6100C2D5A3 /* VideoListViewController.swift in Sources */,
 				7AD0F86920178E6100C2D5A3 /* AppDelegate.swift in Sources */,

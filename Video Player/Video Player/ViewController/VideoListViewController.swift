@@ -41,7 +41,8 @@ class VideoListViewController: UIViewController {
                 presenterName: "Masao Seki",
                 time: "10:00",
                 description: "G12 Standard Level English <Syntax> Tense(1) Chapter 1",
-                videoURL: "http://recruit.brightcove.com.edgesuite.net/rtmp/o1/4477599122001/4477599122001_5352864362001_5352849758001.mp4?pubId=4477599122001&videoId=5352849758001")
+                videoURL: "http://recruit.brightcove.com.edgesuite.net/rtmp/o1/4477599122001/4477599122001_5352864362001_5352849758001.mp4?pubId=4477599122001&videoId=5352849758001",
+                thumbnailURL: "https://recruit-a.akamaihd.net/pd/4477599122001/201512/23/4477599122001_4672789792001_4672787431001-vs.jpg?pubId=4477599122001")
 
             models.append(model)
         }
@@ -71,4 +72,26 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let model = dataSource[indexPath.row]
+
+        AsyncImageLoader.shared.loadImageWith(urlString: model.thumbnailURL) { (image) in
+            DispatchQueue.main.async {
+                guard let cell = tableView.cellForRow(at: indexPath) as? ThumbnailCell,
+                    let image = image else {
+                        return
+                }
+
+                cell.thumbnailImage = image
+            }
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let model = dataSource[indexPath.row]
+
+        AsyncImageLoader.shared.cancelDownloading(urlString: model.thumbnailURL)
+    }
 }
+
