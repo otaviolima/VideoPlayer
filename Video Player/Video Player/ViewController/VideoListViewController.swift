@@ -13,13 +13,14 @@ class VideoListViewController: UIViewController {
     static let thumbnailCellID = "thumbnailCellID"
 
     let tableView = UITableView()
+    private let dataProvider = PlaylistDataProviderFactory.dataProvider()
     private var dataSource = [ThumbnailModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureUI()
-        mockData()
+        reloadData()
     }
 
     private func configureUI() {
@@ -41,23 +42,14 @@ class VideoListViewController: UIViewController {
         return true
     }
 
-    private func mockData() {
-        var models = [ThumbnailModel]()
-
-        for _ in 1...10 {
-            let model = ThumbnailModel(title: "G12 Standard Level English<Syntax> Trial Ver.",
-                presenterName: "Masao Seki",
-                time: "10:00",
-                description: "G12 Standard Level English <Syntax> Tense(1) Chapter 1",
-                videoURL: "http://recruit.brightcove.com.edgesuite.net/rtmp/o1/4477599122001/4477599122001_5352864362001_5352849758001.mp4?pubId=4477599122001&videoId=5352849758001",
-                thumbnailURL: "https://recruit-a.akamaihd.net/pd/4477599122001/201512/23/4477599122001_4672789792001_4672787431001-vs.jpg?pubId=4477599122001")
-
-            models.append(model)
+    private func reloadData() {
+        dataProvider.loadPlaylist { [weak self](items) in
+            DispatchQueue.main.async {
+                self?.dataSource = items
+                self?.tableView.reloadData()
+            }
         }
-
-        dataSource = models
     }
-
 }
 
 // MARK: - TableView DataSource & Delegate
