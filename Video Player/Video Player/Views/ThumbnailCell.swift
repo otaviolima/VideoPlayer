@@ -118,6 +118,8 @@ class ThumbnailCell: UITableViewCell {
         presenterName.text = model?.presenterName
         time.text = model?.time
         descriptionLabel.text = model?.description
+        // Needs to clear, otherwise when the cell is reused the old image appears for a brief time before loading the correct one
+        thumbImageView.image = nil
     }
     
 }
