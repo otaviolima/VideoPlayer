@@ -80,7 +80,7 @@ private final class PlaylistLocalJSONDataProvider: PlaylistDataProvider {
 
         duration = duration / 1000 // Original duration is in miliseconds
         let hours = floor(duration / 3600)
-        let minutes = floor((duration - (hours * 3600)) / 60.0);
+        let minutes = floor((duration - (hours * 3600)) / 60.0)
         let seconds = floor(duration - (hours * 3600) - (minutes * 60))
 
         if hours > 0 {
