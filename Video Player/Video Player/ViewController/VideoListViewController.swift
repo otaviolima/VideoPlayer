@@ -8,6 +8,13 @@
 
 import UIKit
 
+extension UIColor {
+
+    public static var chalkBoard: UIColor {
+        return UIColor(red: 67 / 255.0, green: 111 / 255.0, blue: 67 / 255.0, alpha: 1)
+    }
+}
+
 class VideoListViewController: UIViewController {
 
     static let thumbnailCellID = "thumbnailCellID"
@@ -27,11 +34,37 @@ class VideoListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.frame = view.frame
-        tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(ThumbnailCell.self, forCellReuseIdentifier: VideoListViewController.thumbnailCellID)
         tableView.tableFooterView = UIView() // Avoid empty cells in the bottom of the tableview
+        tableView.estimatedRowHeight = 0
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
 
-        view.addSubview(tableView)
+        // Embedding the tableview in a containter to fix weird cell jumping when pushing the player controller
+        let container = UIView()
+        container.isUserInteractionEnabled = true
+        container.translatesAutoresizingMaskIntoConstraints = false
+
+        container.addSubview(tableView)
+        view.addSubview(container)
+
+        view.backgroundColor = .chalkBoard
+
+        let constraints = [
+            container.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor),
+            container.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor),
+            container.leftAnchor.constraint(equalTo: view.leftAnchor),
+            container.rightAnchor.constraint(equalTo: view.rightAnchor),
+
+            tableView.topAnchor.constraint(equalTo: container.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: container.bottomAnchor),
+            tableView.leftAnchor.constraint(equalTo: container.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: container.rightAnchor)
+        ]
+
+        NSLayoutConstraint.activate(constraints)
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -70,6 +103,10 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
