@@ -36,6 +36,8 @@ final class PlayerViewController: UIViewController {
     }
 
     @objc func buttonWasPressed(_ sender: Any) {
+        playerView.player.pause()
+
         dismiss(animated: true, completion: nil)
     }
 
