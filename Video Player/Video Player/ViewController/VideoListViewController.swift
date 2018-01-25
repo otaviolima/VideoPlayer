@@ -23,6 +23,8 @@ class VideoListViewController: UIViewController {
     private let dataProvider = PlaylistDataProviderFactory.dataProvider()
     private var dataSource = [ThumbnailModel]()
 
+    private let animator = ThumbnailToFullScreenAnimator()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -136,9 +138,23 @@ extension VideoListViewController: UITableViewDelegate, UITableViewDataSource {
 
         let vc = PlayerViewController()
         vc.videoURL = model.videoURL
+        vc.transitioningDelegate = self
 
         present(vc, animated: true, completion: nil)
-        
     }
 }
 
+extension VideoListViewController: UIViewControllerTransitioningDelegate {
+
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        animator.presenting = true
+
+        return animator
+    }
+
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        animator.presenting = false
+
+        return animator
+    }
+}

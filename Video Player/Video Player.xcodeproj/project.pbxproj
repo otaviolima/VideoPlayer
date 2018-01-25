@@ -18,6 +18,7 @@
 		7AD0F87020178E6100C2D5A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0F86F20178E6100C2D5A3 /* Assets.xcassets */; };
 		7AD0F87320178E6200C2D5A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0F87120178E6200C2D5A3 /* LaunchScreen.storyboard */; };
 		7AD0F87B2017A5FF00C2D5A3 /* playlist.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AD0F87A2017A5FF00C2D5A3 /* playlist.json */; };
+		7AE242F720191FFE00056F45 /* ThumbnailToFullScreenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE242F620191FFE00056F45 /* ThumbnailToFullScreenAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		7AD0F87220178E6200C2D5A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AD0F87420178E6200C2D5A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7AD0F87A2017A5FF00C2D5A3 /* playlist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = playlist.json; sourceTree = "<group>"; };
+		7AE242F620191FFE00056F45 /* ThumbnailToFullScreenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailToFullScreenAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 		7AD0F86720178E6100C2D5A3 /* Video Player */ = {
 			isa = PBXGroup;
 			children = (
+				7AE242F520191FDD00056F45 /* Transitions */,
 				7A56F5A82017DDA500948268 /* DataProvider */,
 				7A56F5A52017D89600948268 /* AsyncImageLoader */,
 				7A56F5A12017CF8700948268 /* Model */,
@@ -120,6 +123,14 @@
 				7AD0F87420178E6200C2D5A3 /* Info.plist */,
 			);
 			path = "Video Player";
+			sourceTree = "<group>";
+		};
+		7AE242F520191FDD00056F45 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				7AE242F620191FFE00056F45 /* ThumbnailToFullScreenAnimator.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +211,7 @@
 				7A56F5AC2017F06300948268 /* PlayerViewController.swift in Sources */,
 				7A56F5AE2017F21700948268 /* PlayerView.swift in Sources */,
 				7AD0F86B20178E6100C2D5A3 /* VideoListViewController.swift in Sources */,
+				7AE242F720191FFE00056F45 /* ThumbnailToFullScreenAnimator.swift in Sources */,
 				7A56F5AA2017DDD600948268 /* PlaylistDataProvider.swift in Sources */,
 				7AD0F86920178E6100C2D5A3 /* AppDelegate.swift in Sources */,
 			);
