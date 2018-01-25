@@ -16,6 +16,7 @@ final class PlayerView: UIView {
         static let buttomHeight: CGFloat = 32
         static let buttomWidth: CGFloat = 32
         static let horizontalSpacing: CGFloat = 15
+        static let labelMinWidth: CGFloat = 40
 
         static let gradientHeight: CGFloat = 80
 
@@ -123,15 +124,17 @@ final class PlayerView: UIView {
             closeButton.heightAnchor.constraint(equalToConstant: Dimensions.buttomHeight),
             closeButton.widthAnchor.constraint(equalToConstant: Dimensions.buttomWidth),
 
-            timeRemainingLabel.leftAnchor.constraint(equalTo: controlsContainer.leftAnchor, constant: Dimensions.margin),
-            timeRemainingLabel.rightAnchor.constraint(equalTo: seekSlider.leftAnchor, constant: -Dimensions.horizontalSpacing),
-            timeRemainingLabel.centerYAnchor.constraint(equalTo: seekSlider.centerYAnchor),
-            timeRemainingLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0),
-
-            elapsedTimeLabel.leftAnchor.constraint(equalTo: seekSlider.rightAnchor, constant: Dimensions.horizontalSpacing),
-            elapsedTimeLabel.rightAnchor.constraint(equalTo: controlsContainer.rightAnchor, constant: -Dimensions.margin),
+            elapsedTimeLabel.leftAnchor.constraint(equalTo: controlsContainer.leftAnchor, constant: Dimensions.margin),
+            elapsedTimeLabel.rightAnchor.constraint(equalTo: seekSlider.leftAnchor, constant: -Dimensions.horizontalSpacing),
             elapsedTimeLabel.centerYAnchor.constraint(equalTo: seekSlider.centerYAnchor),
             elapsedTimeLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0),
+            elapsedTimeLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Dimensions.labelMinWidth),
+
+            timeRemainingLabel.leftAnchor.constraint(equalTo: seekSlider.rightAnchor, constant: Dimensions.horizontalSpacing),
+            timeRemainingLabel.rightAnchor.constraint(equalTo: controlsContainer.rightAnchor, constant: -Dimensions.margin),
+            timeRemainingLabel.centerYAnchor.constraint(equalTo: seekSlider.centerYAnchor),
+            timeRemainingLabel.heightAnchor.constraint(greaterThanOrEqualToConstant: 0),
+            elapsedTimeLabel.widthAnchor.constraint(greaterThanOrEqualToConstant: Dimensions.labelMinWidth),
 
             playPauseButton.centerYAnchor.constraint(equalTo: controlsContainer.centerYAnchor),
             playPauseButton.centerXAnchor.constraint(equalTo: controlsContainer.centerXAnchor),
@@ -139,6 +142,7 @@ final class PlayerView: UIView {
             playPauseButton.widthAnchor.constraint(equalToConstant: Dimensions.buttomWidth),
 
             seekSlider.bottomAnchor.constraint(equalTo: controlsContainer.bottomAnchor, constant: -Dimensions.margin),
+            seekSlider.widthAnchor.constraint(greaterThanOrEqualToConstant: 0),
 
             controlsContainer.topAnchor.constraint(equalTo: topAnchor),
             controlsContainer.leftAnchor.constraint(equalTo: leftAnchor),
