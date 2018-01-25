@@ -223,9 +223,11 @@ final class PlayerView: UIView {
 
     private func hideControls(animated: Bool) {
         self.controlsContainer.alpha = 1
+        self.gradientLayer.opacity = 1
 
         let animations = {
             self.controlsContainer.alpha = 0
+            self.gradientLayer.opacity = 0
         }
 
         if animated {
@@ -237,9 +239,11 @@ final class PlayerView: UIView {
 
     private func showControls(animated: Bool) {
         self.controlsContainer.alpha = 0
+        self.gradientLayer.opacity = 0
 
         let animations = {
             self.controlsContainer.alpha = 1
+            self.gradientLayer.opacity = 1
         }
 
         if animated {
