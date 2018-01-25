@@ -57,6 +57,8 @@ final class PlayerViewController: UIViewController {
     // MARK: Private Methods
 
     private func configureUI() {
+        view.backgroundColor = .black
+
         playerView.translatesAutoresizingMaskIntoConstraints = true
         playerView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         playerView.frame = view.bounds
